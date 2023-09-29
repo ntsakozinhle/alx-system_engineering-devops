@@ -1,2 +1,2 @@
 #!/bin/bash
-file -i -l school
+file -i -l -m -p school
