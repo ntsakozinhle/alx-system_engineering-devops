@@ -1,2 +1,2 @@
 #!/bin/bash
-file -i -m \\school ~/alx-system_engineering-devops/0x00-shell_basics
+file -i -m -F \\school\ ~/alx-system_engineering-devops/0x00-shell_basics
