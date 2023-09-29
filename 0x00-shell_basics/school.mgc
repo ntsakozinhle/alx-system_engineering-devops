@@ -1,2 +1,2 @@
 #!/bin/bash
-file -i -l -m -p school
+file -i -m school ~/alx-system_engineering-devops/0x00-shell_basics
