@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($((BINARY*2))/5))
+echo $(($((BINARY*5))/10))
