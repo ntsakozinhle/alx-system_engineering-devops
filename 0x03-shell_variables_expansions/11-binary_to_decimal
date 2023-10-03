@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($((BINARY**5)) % 5))
+echo $(($((BINARY**10)) % 5))
