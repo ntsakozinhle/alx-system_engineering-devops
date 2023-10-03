@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((BINARY % 100))
+echo $((BINARY % 50))
