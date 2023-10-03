@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((BREATH * $((LOVE**LOVE))))
+echo $((BREATH * $((LOVE*LOVE))))
