@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((BINARY * $((5 % 100))))
+echo $((BINARY % $((BINARY*5))))
