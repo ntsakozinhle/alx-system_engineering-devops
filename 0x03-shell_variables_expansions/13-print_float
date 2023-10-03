@@ -1,0 +1,2 @@
+#!/bin/bash
+echo with $((NUM%)) left over
