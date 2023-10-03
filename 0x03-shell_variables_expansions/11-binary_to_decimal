@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($((BINARY*10)) % BINARY))
+echo $((BINARY % 5$((BINARY))))
