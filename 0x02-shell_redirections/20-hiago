@@ -1,2 +1,2 @@
 #!/bin/bash
-tr -d [A-Za-z] [c][C]
+tr -d [c][C]
