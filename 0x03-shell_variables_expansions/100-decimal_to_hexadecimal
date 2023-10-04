@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($((0xDECIMAL))%10))
+echo $(($((16#DECIMAL))%10))
