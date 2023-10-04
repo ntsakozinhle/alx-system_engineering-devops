@@ -1,2 +1,2 @@
 #!/bin/bash
-tr {A=A}{A=Z} {c=c}{c=e}
+tr [A=A][A=Z] [c=c][c=e]
