@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script kills the process name 7-highlander
+
+pkill -f "7-highlander"
+
+if ps -f | grep -q "7-highlander"; then
+	echo "Failed to kill process"
+else
+	echo "Killed"
+fi
