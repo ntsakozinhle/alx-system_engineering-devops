@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script stops the 4-to_infinity_and_beyond process
+
+pkill -f "4-to_infinity_and_beyond"
+
+if ps -ef | grep -q "4-to_infinity_and_beyond"; then
+	echo "Failed to stop process 4-to_infinity_and_beyond."
+else
+	echo "Process 4-to_infinity_and_beyond has been stopped."
+fi
