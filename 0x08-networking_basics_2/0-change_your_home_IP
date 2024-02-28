@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# This script configures the localhost and facebook.com IP addresses
+
+if [ "$(id -u)" -ne 0 ]; then
+	echo "Please run this script with sudo."
+	exit 1
+fi
+
+if grep -q "127.0.0.2" /etc/hosts; then
+	echo "localhost already configured."
+else
+	echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts >/dev/null
+	echo "localhost configured to 127.0.0.2."
+fi
+
+if grep -q "8.8.8.8" /etc/hosts; then
+	echo "Facebook.com already configured."
+else
+	echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts >/dev/null
+	echo "facebook.com configured to 8.8.8.8."
+fi
+
+if command -v systemctl &>/dev/null && systemctl status systemd-resolved &>/dev/null; then
+	sudo systemctl restart systemd-resolved.service
+	echo "DNS cache cleared."
+else
+	echo "Unable to clear DNS. systemd-resolve not found."
+fi
+
+echo "IP addresses configured successfully."
