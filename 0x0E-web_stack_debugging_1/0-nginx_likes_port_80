@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Step 1: Check Nginx configuration
-nginx -t
+# Step 1: Check Nginx is listening to port 80
+nginx_status=$(netstat -tuln | grep ':80')
+if [ -z "$nginx_status" ]; then
+	echo "Nginx is not listening on port"
+else
+	echo "Nginx is listening on port 80"
+fi
 
-# Step 2: Restart Nginx service
-systemctl restart nginx
-
-# Step 3: Verify Nginx service status
-systemctl status nginx
-
-# Step 4: Check if Nginx is listening on port 80
-netstat -tuln | grep :80
+# Step 2: Test connection on port 80
+curl_output=$(curl -s 0:80)
+echo "$curl_output"
