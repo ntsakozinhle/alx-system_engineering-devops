@@ -1,2 +1,12 @@
-Nginx is listening on port 80
-Hello World!
+Hit:1 http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu focal InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:5 https://download.docker.com/linux/ubuntu focal InRelease [57.7 kB]
+Hit:6 https://deb.nodesource.com/node_14.x focal InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Get:8 https://download.docker.com/linux/ubuntu focal/stable amd64 Packages [50.9 kB]
+Get:9 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [3,595 kB]
+Get:10 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1,201 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4,069 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1,497 kB]
