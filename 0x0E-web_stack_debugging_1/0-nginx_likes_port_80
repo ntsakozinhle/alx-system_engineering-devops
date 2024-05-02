@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Step 1: Check Nginx configuration
+nginx -t
+
+# Step 2: Restart Nginx service
+systemctl restart nginx
+
+# Step 3: Verify Nginx service status
+systemctl status nginx
+
+# Step 4: Check if Nginx is listening on port 80
+netstat -tuln | grep :80
