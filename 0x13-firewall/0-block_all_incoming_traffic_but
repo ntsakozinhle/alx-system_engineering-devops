@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Enable UFW
+sudo ufw enable
+
+# Allow SSH, HHTPS, and HTTP traffic
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+
+
+# Set default policy to deny all incoming connections
+sudo ufw default deny incoming
+
+# Verify rules
+sudo ufw status numbered
