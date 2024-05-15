@@ -1,0 +1,7 @@
+# Configuring Port Forwarding on web-01
+
+## Enable Packet Forarding in UFW
+
+1. Edit the UFW configuration file:
+	```bash
+	sudo nano /etc/default/ufw
