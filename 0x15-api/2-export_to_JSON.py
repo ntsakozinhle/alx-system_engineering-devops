@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""
-This file describes a module that fetches and exports a progress
-list for given employee id using rest api
-"""
+""" This file describes a module that fetches and exports a progress
+list for given employee id to a JSON file """
 
 
-import csv
+import json
 import requests
 import sys
 
@@ -39,22 +37,22 @@ def get_employee_todo_progress(employee_id):
 
     return user_data, todos_data
 
-def export_to_csv(employee_id, user_data, todos_data):
+def export_to_json(employee_id, user_data, todos_data):
     """
-    Exports TODO list progress of an employee to a CSV file.
+    Exports TODO list progress of an employee to a JSON file.
 
     Args:
         employee_id (int): the ID of the employee
         user_data (dict): The employees's user data
         todos_data (list): The list of TODO tasks
     """
-    filename = f"{employee_id}.csv"
+    filename = f"{employee_id}.json"
+    tasks = [{"task": todo.get("title"), "completed": todo.get("completed"),
 
-    with open(filename, mode='w',newline='') as csv_file:
-        fieldnames =["USER_ID", "USERNAME", "TASK_COMPLETES_STATUS", "TASK_TITLE"]
+    with open{filename, mode='w',newline='') as csv_file:
+        filenames =["USER_ID", "USERNAME", "TASK_COMPLETES_STATUS", "TASK_TITLE"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
 
-        writer.writeheader()
         for todo in todos_data:
             writer.writerow({
                 "USER_ID": employee_id,
