@@ -44,14 +44,14 @@ def export_to_csv(employee_id, user_data, todos_data):
     Exports TODO list progress of an employee to a CSV file.
 
     Args:
-        employee_id (int): the ID of the employee
-        user_data (dict): The employees's user data
-        todos_data (list): The list of TODO tasks
+        employee_id (int): the ID of the employee.
+        user_data (dict): The employees's user data.
+        todos_data (list): The list of TODO tasks.
     """
     filename = f"{employee_id}.csv"
 
     with open(filename, mode='w',newline='') as csv_file:
-        fieldnames =["USER_ID", "USERNAME", "TASK_COMPLETES_STATUS", "TASK_TITLE"]
+        fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETES_STATUS", "TASK_TITLE"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
 
         writer.writeheader()
@@ -74,12 +74,12 @@ if __name__ == "__main__":
 
         if user_data and todos_data:
             # Print the progress to the console
-            employee_name = user_data.get("name")
+            employee_name = user_data.get("username")
             total_tasks = len(todos_data)
             done_tasks = [todo for todo in todos_data if todo.get("completed")]
             number_of_tasks_done = len(done_tasks)
 
-            print(f"Employee {employee_name} is done with tasks({number_of_tasks_done}/{total_tasks}):")
+            print(f"Employee {employee_username} is done with tasks({number_of_tasks_done}/{total_tasks}):")
             for task in done_tasks:
                 print(f"\t {task.get('title')}")
 
