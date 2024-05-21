@@ -4,10 +4,10 @@ This file describes a module that fetches and exports a progress
 list for given employee id to a JSON file
 """
 
-
 import json
 import requests
 import sys
+
 
 def get_employee_todo_progress(employee_id):
     """
@@ -38,6 +38,7 @@ def get_employee_todo_progress(employee_id):
 
     return user_data, todos_data
 
+
 def export_to_json(employee_id, user_data, todos_data):
     """
     Exports TODO list progress of an employee to a JSON file.
@@ -53,6 +54,7 @@ def export_to_json(employee_id, user_data, todos_data):
 
     with open{filename, 'w') as json_file:
         json.dump(json_data, json_file)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -73,7 +75,6 @@ if __name__ == "__main__":
             print(f"Employee {employee_name} is done with tasks({number_of_tasks_done}/{total_tasks}):")
             for task in done_tasks:
                 print(f"\t {task.get('title')}")
-
 
             export_to_json(employee_id, user_data, todos_data)
 
