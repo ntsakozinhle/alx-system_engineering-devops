@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This file describes a module that fetches and exports a progress
-list for given employee id to a JSON file
+list for given employee id to a JSON file.
 """
 
 import json
