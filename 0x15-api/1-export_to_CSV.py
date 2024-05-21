@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" This file describes a module that fetches and exports a progress list
-for given employee id using rest api """
+""" This file describes a module that fetches and exports a progress
+list for given employee id using rest api """
 
 
 import csv
@@ -15,7 +15,6 @@ def get_employee_todo_progress(employee_id):
         employee_id (int): The ID of the employee
 
     """
-
     # API URLs
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
