@@ -4,6 +4,7 @@ This file describes a module that fetches and exports a progress
 list for given employee id to a JSON file.
 """
 
+
 import json
 import requests
 import sys
@@ -11,10 +12,13 @@ import sys
 
 def get_employee_todo_progress(employee_id):
     """
-    Fetches and prints the TODO list progress of an employee
+    Fetches and the TODO list progress of an employee.
 
     Args:
         employee_id (int): The ID of the employee.
+
+    Returns:
+        tuple: tuple containing user data.
     """
     # API URLs
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
