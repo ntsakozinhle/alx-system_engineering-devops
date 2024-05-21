@@ -17,11 +17,15 @@ def get_employee_todo_progress(employee_id):
 
     # API URLs
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userID={employee_id}"
+    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
 
     # Fetch user information
     user_response = requests.get(user_url)
     user_data = user_response.json()
+
+    if not user_data:
+        print(f"Employee with ID {employee_id} not found.")
+        return
 
     # Fetch ToDo list information
     todos_response = requests.get(todos_url)
