@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-""" This file describes a module that fetches and exports a progress
-list for given employee id to a JSON file """
+"""
+This file describes a module that fetches and exports a progress
+list for given employee id to a JSON file
+"""
 
 
 import json
@@ -9,11 +11,10 @@ import sys
 
 def get_employee_todo_progress(employee_id):
     """
-    fetches and prints the TODO list progress of an employee
+    Fetches and prints the TODO list progress of an employee
 
     Args:
-        employee_id (int): The ID of the employee
-
+        employee_id (int): The ID of the employee.
     """
     # API URLs
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
@@ -42,28 +43,20 @@ def export_to_json(employee_id, user_data, todos_data):
     Exports TODO list progress of an employee to a JSON file.
 
     Args:
-        employee_id (int): the ID of the employee
-        user_data (dict): The employees's user data
-        todos_data (list): The list of TODO tasks
+        employee_id (int): the ID of the employee.
+        user_data (dict): The employees's user data.
+        todos_data (list): The list of TODO tasks.
     """
     filename = f"{employee_id}.json"
-    tasks = [{"task": todo.get("title"), "completed": todo.get("completed"),
+    tasks = [{"task": todo.get("title"), "completed": todo.get("completed"), "username": user_data.get("username")} for todo in todos_data]
+    json_data = {str(employee_id): tasks}
 
-    with open{filename, mode='w',newline='') as csv_file:
-        filenames =["USER_ID", "USERNAME", "TASK_COMPLETES_STATUS", "TASK_TITLE"]
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames, quoting=csv.QUOTE_ALL)
-
-        for todo in todos_data:
-            writer.writerow({
-                "USER_ID": employee_id,
-                "USERNAME": user_data.get("username"),
-                "TASK_COMPLETES_STATUS": todo.get("completed"), 
-                "TASK_TITLE": todo.get("title")
-            })
+    with open{filename, 'w') as json_file:
+        json.dump(json_data, json_file)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: ./1-export_to_CSV.py <employee_id>")
+        print("Usage: ./2-export_to_JSON.py <employee_id>")
         sys.exit(1)
 
     try:
@@ -82,7 +75,7 @@ if __name__ == "__main__":
                 print(f"\t {task.get('title')}")
 
 
-            export_to_csv(employee_id, user_data, todos_data)
+            export_to_json(employee_id, user_data, todos_data)
 
     except ValueError:
         print("Employee ID must be an integer.")
