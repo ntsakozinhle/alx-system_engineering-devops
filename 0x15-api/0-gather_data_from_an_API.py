@@ -21,18 +21,25 @@ def get_employee_todo_progress(employee_id):
 
     # Fetch user information
     user_response = requests.get(user_url)
-    user_data = user_response.json()
-
-    if not user_data:
-        print(f"Employee with ID {employee_id} not found.")
+    if user_response.status_code != 200:
+        print("Error fetching user information")
         return
+
+    user_data = user_response.json()
 
     # Fetch ToDo list information
     todos_response = requests.get(todos_url)
+    if todosresponse.status_code != 200:
+        print("Error fetching TODO list information")
+        return
+
     todos_data = todos_response.json()
 
     # Extract employee name
     employee_name = user_data.get("name")
+    if not employee_name:
+        print(f"Employee name not found.")
+        return
 
     # Calculate task completion
     total_tasks = len(todos_data)
