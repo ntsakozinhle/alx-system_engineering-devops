@@ -29,7 +29,7 @@ def get_employee_todo_progress(employee_id):
 
     # Fetch ToDo list information
     todos_response = requests.get(todos_url)
-    if todosresponse.status_code != 200:
+    if todos_response.status_code != 200:
         print("Error fetching TODO list information")
         return
 
@@ -57,8 +57,8 @@ if __name__ == "__main__":
         sys.exit(1)
 
     try:
-        employee_id = int(sys_argv[1])
-        get_emplyee_todo_progress(employee_id)
+        employee_id = int(sys.argv[1])
+        get_employee_todo_progress(employee_id)
     except ValueError:
         print("Employee ID must be an integer.")
         sys.exit(1)
