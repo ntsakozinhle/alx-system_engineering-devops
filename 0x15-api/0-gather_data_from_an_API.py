@@ -1,9 +1,20 @@
 #!/usr/bin/python3
+""" This file describes a module that fetches and displasy a progress list
+for given employee id using rest api """
+
 
 import requests
 import sys
 
 def get_employee_todo_progress(employee_id):
+    """
+    fetches and prints the TODO list progress of an employee
+
+    Args:
+        employee_id (int): The ID of the employee
+
+    """
+
     # API URLs
     user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
     todos_url = f"https://jsonplaceholder.typicode.com/todos?userID={employee_id}"
