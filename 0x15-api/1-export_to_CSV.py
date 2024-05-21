@@ -74,12 +74,12 @@ if __name__ == "__main__":
 
         if user_data and todos_data:
             # Print the progress to the console
-            employee_name = user_data.get("username")
+            employee_name = user_data.get("name")
             total_tasks = len(todos_data)
             done_tasks = [todo for todo in todos_data if todo.get("completed")]
             number_of_tasks_done = len(done_tasks)
 
-            print(f"Employee {employee_username} is done with tasks({number_of_tasks_done}/{total_tasks}):")
+            print(f"Employee {employee_name} is done with tasks({number_of_tasks_done}/{total_tasks}):")
             for task in done_tasks:
                 print(f"\t {task.get('title')}")
 
