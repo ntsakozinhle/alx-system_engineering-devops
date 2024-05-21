@@ -61,6 +61,9 @@ def export_to_json(employee_id, user_data, todos_data):
 
 
 if __name__ == "__main__":
+    """
+    Main block of the script. Validates command-line arguments.
+    """
     if len(sys.argv) != 2:
         print("Usage: ./2-export_to_JSON.py <employee_id>")
         sys.exit(1)
